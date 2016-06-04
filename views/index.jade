@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= "Data on 2012 violations"
+  table.table.table-striped.table-bordered
+    thead
+      tr
+        th Violation Category
+        th Number of violations
+        th Earliest violation date
+        th Latest violation date
+    tbody
+      each violation, key in violations
+        tr
+          td #{key}
+          td #{violation}
+          td #{earliestViolation[key]}
+          td #{latestViolation[key]}
